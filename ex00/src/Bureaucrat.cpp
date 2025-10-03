@@ -29,12 +29,17 @@ int Bureaucrat::getGrade() const{
 }
 
 void	Bureaucrat::gradeUp(){
+	if (_grade <= 1)
+		throw GradeTooHighException();
 	_grade--;
 }
 
 void	Bureaucrat::gradeDown(){
+	if (_grade >= 150)
+		throw GradeTooLowException();
 	_grade++;
 }
+
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b){
 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
