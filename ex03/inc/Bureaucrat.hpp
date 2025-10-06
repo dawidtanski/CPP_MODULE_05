@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat{
 	
@@ -30,7 +30,8 @@ class Bureaucrat{
 			void	gradeUp();
 			void	gradeDown();
 
-			void	signForm(Form& f) const;
+			void	signForm(AForm& f) const;
+			void	executeForm(AForm &f) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

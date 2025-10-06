@@ -6,11 +6,11 @@
 #    By: dtanski <dtanski@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/31 05:10:32 by dtanski           #+#    #+#              #
-#    Updated: 2025/10/03 14:55:00 by dtanski          ###   ########.fr        #
+#    Updated: 2025/10/05 12:13:42 by dtanski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  ex01
+NAME =  ex02
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g -I inc/
@@ -19,7 +19,10 @@ SRC_DIR = src
 OBJ_DIR = obj
 SRC =	src/main.cpp \
 		src/Bureaucrat.cpp\
-		src/Form.cpp\
+		src/AForm.cpp\
+		src/PresidentialPardonForm.cpp\
+		src/RobotomyRequestForm.cpp\
+		src/ShrubberyCreationForm.cpp\
 
 		
 OBJ = $(SRC:src/%.cpp=obj/%.o)

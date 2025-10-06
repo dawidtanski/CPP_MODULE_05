@@ -26,7 +26,7 @@ Form& Form::operator=(const Form& other){
 }
 
 void	Form::beSigned(const Bureaucrat& bur){
-	if (bur.getGrade() >= _gradeToSign)
+	if (bur.getGrade() <= _gradeToSign)
 		_signed = true;
 	else
 		throw GradeTooLowException();
