@@ -21,5 +21,21 @@ int main(){
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
+	// Additional tests
+	try{
+		Bureaucrat bur_high(1);
+		Form form2;
 
+		// Test 1: Output Form
+		std::cout << form2 << std::endl;
+
+		// Test 2: Sign form again (already signed)
+		bur_high.signForm(form2);
+		bur_high.signForm(form2);  // Already signed
+
+	}catch(const std::exception& e){
+		std::cerr << "Additional test exception: " << e.what() << std::endl;
+	}
+
+	return 0;
 }

@@ -6,11 +6,11 @@
 #    By: dtanski <dtanski@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/31 05:10:32 by dtanski           #+#    #+#              #
-#    Updated: 2025/10/05 12:13:42 by dtanski          ###   ########.fr        #
+#    Updated: 2025/11/16 19:45:33 by dtanski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  ex02
+NAME =  ex03
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g -I inc/
@@ -23,6 +23,7 @@ SRC =	src/main.cpp \
 		src/PresidentialPardonForm.cpp\
 		src/RobotomyRequestForm.cpp\
 		src/ShrubberyCreationForm.cpp\
+		src/Intern.cpp\
 
 		
 OBJ = $(SRC:src/%.cpp=obj/%.o)

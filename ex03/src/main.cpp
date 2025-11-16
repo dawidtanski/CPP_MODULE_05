@@ -2,37 +2,39 @@
 #include "../inc/RobotomyRequestForm.hpp"
 #include "../inc/ShrubberyCreationForm.hpp"
 #include "../inc/PresidentialPardonForm.hpp"
+#include "../inc/Intern.hpp"
 
 int main(){
 
+	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");\
+		Bureaucrat official(70);
+		official.signForm(*rrf);
+		delete rrf;  
+	}
+
 	try{
-		Bureaucrat bur(5);
-		// Bureaucrat bur2(1);
-		RobotomyRequestForm form1;
-		ShrubberyCreationForm form2;
-		PresidentialPardonForm form3;
+		Intern intern;
+		Bureaucrat official_high(1);  // High grade
 
-		bur.signForm(form1);
-		bur.signForm(form2);
-		bur.signForm(form3);
-		std::cout << "------------------------------------" << std::endl;
-		bur.executeForm(form1);
-		std::cout << "------------------------------------" << std::endl;
-		bur.executeForm(form2);
-		std::cout << "------------------------------------" << std::endl;
-		bur.executeForm(form3);
-		// bur2.signForm(form1);
+		// Test 1: Create and sign ShrubberyCreationForm
+		AForm* form2 = intern.makeForm("shrubbery creation", "home");
+		official_high.signForm(*form2);
+		delete form2;
 
-		// Bureaucrat bur2(170);
-		// Bureaucrat bur3(-3);
-		// std::cout << bur;
-		// bur.gradeDown();
-		// std::cout << bur;
-		// bur.gradeUp();
-		// std::cout << bur;
+		// Test 2: Create and sign PresidentialPardonForm
+		AForm* form3 = intern.makeForm("presidential pardon", "Alice");
+		official_high.signForm(*form3);
+		delete form3;
+
+		// Test 3: Invalid form name (should throw exception)
+		intern.makeForm("invalid form", "test");
+
 	}catch(const std::exception& e){
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
-
+	return 0;
 }

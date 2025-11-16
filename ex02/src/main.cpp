@@ -34,5 +34,22 @@ int main(){
 		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
+	// Additional tests
+	try{
+		Bureaucrat bur_high(1);  // High grade
+		Bureaucrat bur_low(150);  // Low grade
+		RobotomyRequestForm form4("Bender");
+		ShrubberyCreationForm form5("home");
 
+		// Test 1: Execute without signing
+		bur_high.executeForm(form4);
+
+		// Test 2: Sign with low grade bureaucrat
+		bur_low.signForm(form5);
+
+	}catch(const std::exception& e){
+		std::cerr << "Additional test exception: " << e.what() << std::endl;
+	}
+
+	return 0;
 }
