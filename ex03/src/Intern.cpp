@@ -45,6 +45,7 @@ AForm* Intern::makeForm(std::string formName, std::string target) {
 		}
 	}
 
+	std::cerr << "Error: Form '" << formName << "' not found" << std::endl;
 	throw FormNotFoundException();
 }
 

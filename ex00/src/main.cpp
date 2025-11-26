@@ -3,9 +3,9 @@
 int main(){
 
 	try{
-		Bureaucrat bur(70);
-		// Bureaucrat bur2(170);
-		Bureaucrat bur3(-3);
+		Bureaucrat bur("John", 70);
+		// Bureaucrat bur2("Invalid", 170);
+		Bureaucrat bur3("TooHigh", -3);
 		std::cout << bur;
 		bur.gradeDown();
 		std::cout << bur;
@@ -18,7 +18,7 @@ int main(){
 	// Additional tests
 	try{
 		// Test 1: Bureaucrat with maximum grade
-		Bureaucrat bur_max(1);
+		Bureaucrat bur_max("Boss", 1);
 		std::cout << "Max grade: " << bur_max << std::endl;
 
 		// Test 2: Try gradeUp on maximum grade (should throw exception)

@@ -9,7 +9,11 @@ const char* Form::GradeTooLowException::what() const throw(){
 	return "Form: grade too low";
 }
 
-Form::Form():_name("Form"), _signed(false), _gradeToSign(15), _gradeToExec(5){
+Form::Form(const std::string& name, int gradeToSign, int gradeToExec):_name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec){
+	if (gradeToSign < 1 || gradeToExec < 1)
+		throw GradeTooHighException();
+	if (gradeToSign > 150 || gradeToExec > 150)
+		throw GradeTooLowException();
 }
 
 Form::~Form(){}

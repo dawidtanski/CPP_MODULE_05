@@ -16,7 +16,11 @@ const char* AForm::FormNotSignedException::what() const throw(){
 AForm::AForm():_name("AForm"), _signed(false), _gradeToSign(15), _gradeToExec(5){
 }
 
-AForm::AForm(const std::string name, int gradeToSign, int gradeToExec):_name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec){
+AForm::AForm(const std::string name, int gradeToSign, int gradeToExec):_name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec){
+	if (gradeToSign < 1 || gradeToExec < 1)
+		throw GradeTooHighException();
+	if (gradeToSign > 150 || gradeToExec > 150)
+		throw GradeTooLowException();
 }
 
 AForm::~AForm(){}

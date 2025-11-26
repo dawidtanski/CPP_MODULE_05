@@ -1,7 +1,7 @@
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/AForm.hpp"
 
-Bureaucrat::Bureaucrat(int grade):_name("Bureaucrat"),_grade(grade){
+Bureaucrat::Bureaucrat(const std::string& name, int grade):_name(name),_grade(grade){
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)

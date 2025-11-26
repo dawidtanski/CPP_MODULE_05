@@ -3,9 +3,9 @@
 int main(){
 
 	try{
-		Bureaucrat bur(70);
-		Bureaucrat bur2(1);
-		Form form1;
+		Bureaucrat bur("John", 70);
+		Bureaucrat bur2("Boss", 1);
+		Form form1("Tax Form", 50, 25);
 
 		bur.signForm(form1);
 		bur2.signForm(form1);
@@ -23,8 +23,8 @@ int main(){
 
 	// Additional tests
 	try{
-		Bureaucrat bur_high(1);
-		Form form2;
+		Bureaucrat bur_high("CEO", 1);
+		Form form2("Important Document", 5, 1);
 
 		// Test 1: Output Form
 		std::cout << form2 << std::endl;

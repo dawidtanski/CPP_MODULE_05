@@ -2,15 +2,18 @@
 #include "../inc/RobotomyRequestForm.hpp"
 #include "../inc/ShrubberyCreationForm.hpp"
 #include "../inc/PresidentialPardonForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 int main(){
+	srand(time(NULL));
 
 	try{
-		Bureaucrat bur(5);
-		// Bureaucrat bur2(1);
-		RobotomyRequestForm form1;
-		ShrubberyCreationForm form2;
-		PresidentialPardonForm form3;
+		Bureaucrat bur("Alice", 5);
+		// Bureaucrat bur2("Bob", 1);
+		RobotomyRequestForm form1("Marvin");
+		ShrubberyCreationForm form2("garden");
+		PresidentialPardonForm form3("Ford Prefect");
 
 		bur.signForm(form1);
 		bur.signForm(form2);
@@ -36,8 +39,8 @@ int main(){
 
 	// Additional tests
 	try{
-		Bureaucrat bur_high(1);  // High grade
-		Bureaucrat bur_low(150);  // Low grade
+		Bureaucrat bur_high("Boss", 1);  // High grade
+		Bureaucrat bur_low("Intern", 150);  // Low grade
 		RobotomyRequestForm form4("Bender");
 		ShrubberyCreationForm form5("home");
 

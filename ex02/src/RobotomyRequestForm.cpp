@@ -1,6 +1,5 @@
 #include "../inc/RobotomyRequestForm.hpp"
 #include <cstdlib>
-#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm():AForm("RobotomyRequestForm", 72, 45),_target("target"){
 }
@@ -22,12 +21,11 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 }
 
 void	RobotomyRequestForm::doExec() const{
-	
-	srand(time(NULL));
+	std::cout << "* drilling noises *" << std::endl;
 	int x = rand() % 2;
 
 	if (x)
-		std::cout << "Vrrrrr! " << _target << " has been robotomized." << std::endl;
+		std::cout << _target << " has been robotomized successfully." << std::endl;
 	else
 		std::cout << "Robotomy failed." << std::endl;
 }
