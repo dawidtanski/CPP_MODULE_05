@@ -21,7 +21,6 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 }
 
 void	RobotomyRequestForm::doExec() const{
-	srand(time(NULL));
 	std::cout << "* drilling noises *" << std::endl;
 	int x = rand() % 2;
 
